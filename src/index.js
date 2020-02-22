@@ -37,6 +37,7 @@ class App extends React.Component {
     }
     return <Spinner message="Please accept location request..." />;
   }
+
   render() {
     // console.log('Inisde Render called 3rd');
     return <div className="border red">{this.renderContent()}</div>;
