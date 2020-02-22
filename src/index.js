@@ -28,15 +28,18 @@ class App extends React.Component {
   // componentDidCatch() {} console.log('Caught Error');
   // componentWillUnmount() {} console.log('Component Will Unmount called last ');
 
-  render() {
-    // console.log('Inisde Render called 3rd');
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error:{this.state.errorMessage}</div>;
     }
     if (!this.state.errorMessage && this.state.lat) {
       return <SeasonDisplay lat={this.state.lat}></SeasonDisplay>;
     }
-    return <Spinner />;
+    return <Spinner message="Please accept location request..." />;
+  }
+  render() {
+    // console.log('Inisde Render called 3rd');
+    return <div className="border red">{this.renderContent()}</div>;
   }
 }
 
